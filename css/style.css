@@ -50,7 +50,7 @@ body {
   cursor: pointer;
 }
 .theme-toggle label::before {
-  content: "🌞";
+  content: "☀️";
   font-size: 6vw;
 }
 .theme-toggle input[type=checkbox] {
