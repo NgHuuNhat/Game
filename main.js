@@ -10,10 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const alphabetDiv = document.getElementById('alphabet');
 
     function startRandomLetters() {
-        timer = setInterval(function () {
-            const randomChar = generateRandomAlphabet();
-            alphabetDiv.textContent = randomChar;
-        }, 50); // Giảm thời gian giữa các chữ cái xuất hiện xuống còn 50ms
+        // Kiểm tra xem timer đã tồn tại chưa
+        if (!timer) {
+            timer = setInterval(function () {
+                const randomChar = generateRandomAlphabet();
+                alphabetDiv.textContent = randomChar;
+            }, 10); // Giảm thời gian giữa các chữ cái xuất hiện xuống còn 50ms
+        }
     }
 
     alphabetDiv.addEventListener('click', function () {
@@ -22,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Sau 1 giây, dừng lại
         setTimeout(function () {
             clearInterval(timer);
-        }, 1000);
+            timer = null; // Đặt timer thành null khi dừng interval
+        }, 700);
     });
 });
 
