@@ -21,10 +21,8 @@ body {
 
 #alphabet {
   font-size: 4vw;
-  /* Kích thước phản ứng */
   cursor: pointer;
   padding: 3vw;
-  /* Padding phản ứng */
   border: 2px solid #333;
   border-radius: 5px;
   opacity: 1;
@@ -32,13 +30,10 @@ body {
   background-color: rgba(255, 192, 203, 0.2666666667);
 }
 
-/* CSS cho chế độ điện thoại */
 @media (max-width: 768px) {
   #alphabet {
     font-size: 20vw;
-    /* Kích thước phản ứng cho chế độ điện thoại */
     padding: 10vw;
-    /* Padding phản ứng cho chế độ điện thoại */
   }
 }
 .hidden {
@@ -50,25 +45,19 @@ body {
   top: 20px;
   right: 20px;
 }
-
 .theme-toggle label {
   margin-right: 5px;
+  cursor: pointer;
 }
-
+.theme-toggle label::before {
+  content: "🌞";
+  font-size: 6vw;
+}
 .theme-toggle input[type=checkbox] {
   display: none;
 }
-
-.theme-toggle input[type=checkbox] + label:before {
-  content: "🌞";
-  font-size: 6vw;
-  /* Kích thước biểu tượng phản ứng */
-}
-
-.theme-toggle input[type=checkbox]:checked + label:before {
+.theme-toggle input[type=checkbox]:checked + label::before {
   content: "🌙";
-  font-size: 6vw;
-  /* Kích thước biểu tượng phản ứng */
 }
 
 .dark-theme {
